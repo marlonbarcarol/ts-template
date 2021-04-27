@@ -14,10 +14,14 @@ default: compile
 
 # 🎉 Compile stuffs
 
+ci:
+	node --version
+	npm --version
+	npm ls
+	npm ci
+	$(MAKE) compile
+
 compile:
-	@ node --version
-	@ npm --version
-	@ npm ls
 	@ $(MAKE) clean
 	@ echo "👀 Checking code"
 	@ $(MAKE) build.prepare
@@ -46,7 +50,7 @@ code.fix: pretty lint pretty
 
 pretty:
 	node_modules/.bin/prettier '.' -w
-	&& $(MAKE) pretty.check
+	$(MAKE) pretty.check
 
 pretty.check:
 	node_modules/.bin/prettier '.' -c
