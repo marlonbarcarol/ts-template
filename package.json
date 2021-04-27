@@ -1,6 +1,6 @@
 {
 	"name": "@marlonbarcarol/ts-template",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A template for the creation of typescript projects",
 	"main": "index.js",
 	"types": "types/index.d.ts",
