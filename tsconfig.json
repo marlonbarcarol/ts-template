@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+
+		"types": [
+			"node",
+			"jest"
+		],
+
+		"baseUrl": "./src",
+		"paths": {
+			"@/*": ["./*"]
+		},
+
+		"allowJs": false,
+		"checkJs": false,
+		"noEmit": true,
+
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true
+	},
+
+	"include": [
+		"./.eslintrc.*",
+		"./jest.config.js",
+		"./src/**/*.ts",
+	],
+	"exclude": [
+		"./node_modules",
+		"./build"
+	]
+}
