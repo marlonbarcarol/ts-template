@@ -76,7 +76,7 @@ test:
 test.watch:
 	node_modules/.bin/jest --watch --verbose
 
-# 🗞 Publish
+# 🗞 NPM
 npm.publish.dry-run:
 	$(MAKE) compile
 	npm publish './build' --access public --tag beta --dry-run
