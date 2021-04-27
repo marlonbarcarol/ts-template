@@ -4,7 +4,6 @@
 	"description": "A template for the creation of typescript projects",
 	"main": "index.js",
 	"types": "types/index.d.ts",
-	"type": "module",
 	"scripts": {
 		"code": "make code.fix",
 		"test": "make test",
