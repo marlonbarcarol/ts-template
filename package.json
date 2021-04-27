@@ -1,9 +1,9 @@
 {
 	"name": "@marlonbarcarol/ts-template",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A template for the creation of typescript projects",
-	"main": "main.js",
-	"types": "types",
+	"main": "index.js",
+	"types": "types/index.d.ts",
 	"scripts": {
 		"code": "make code.fix",
 		"test": "make test",
@@ -14,7 +14,8 @@
 		"typescript",
 		"ts template",
 		"template",
-		"bootstrap project"
+		"bootstrap project",
+		"scaffolding"
 	],
 	"author": "Marlon Barcarol",
 	"license": "MIT",

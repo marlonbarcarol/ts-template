@@ -1,9 +1,9 @@
 
 .PHONY: \
 	compile \
-	build build.prepare \
+	build.pre build \
 	clean \
-	code code.fix \
+	code code.fix code.check \
 	pretty pretty.check \
 	lint lint.check \
 	type.check \
@@ -24,7 +24,7 @@ ci:
 compile:
 	@ $(MAKE) clean
 	@ echo "👀 Checking code"
-	@ $(MAKE) build.prepare
+	@ $(MAKE) build.pre
 	@ echo "👷 Typescript build"
 	@ $(MAKE) build
 	@ echo "🎉 Compile complete 🎉"
@@ -34,7 +34,12 @@ compile:
 build:
 	node_modules/.bin/tsc --build tsconfig.build.json --listEmittedFiles
 
-build.prepare: code.check test type.check
+build.pre:
+	$(MAKE) code.check
+	$(MAKE) type.check
+	$(MAKE) test
+	cp package*.json ./build
+	cp ./*.md ./build
 
 # 🧹 Cleaning
 clean:
