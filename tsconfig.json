@@ -17,6 +17,7 @@
 		"noUnusedParameters": false,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
 
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
