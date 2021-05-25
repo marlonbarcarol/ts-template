@@ -4,14 +4,11 @@
 	"compilerOptions": {
 		"noEmit": false,
 
-		"rootDir": "./src",
-		"outDir": "./build/",
+		"outDir": "./build",
 		"declaration": true,
-		"declarationDir": "./build/types",
 		"importHelpers": false,
 		"removeComments": false,
-		"sourceMap": true,
-		"resolveJsonModule": false
+		"sourceMap": true
 	},
 
 	"include": ["./src"],

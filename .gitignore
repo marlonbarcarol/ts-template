@@ -9,7 +9,6 @@ build/*
 
 # Editor directories and files
 .idea
-#.vscode
 *.code-workspace
 
 !.keep
