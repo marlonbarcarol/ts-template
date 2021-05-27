@@ -61,10 +61,20 @@ build: clean build.ts build.exo
 build.ts:
 	node_modules/.bin/tsc --build tsconfig.build.json --listEmittedFiles
 
+DECLARATION_FILES_SRC_COUNT:=$(strip $(shell find ./src -maxdepth 1 -name '*.d.ts' | wc -l))
+DECLARATION_FILES_ALL_COUNT:=$(strip $(shell find ./src -name '*.d.ts' | wc -l))
+
+# only executes rsync when there is a *.d.ts file, otherwise
 build.exo:
 	cp -v package.json ./build
 	cp -v ./*.md ./build
-	rsync --verbose --relative ./src/./**/*.d.ts ./build
+	if [ $(DECLARATION_FILES_ALL_COUNT) -ge 1 ] && [ $(DECLARATION_FILES_ALL_COUNT) -eq $(DECLARATION_FILES_SRC_COUNT) ]; then\
+		rsync --verbose --relative ./src/./*.d.ts ./build;\
+	elif [ $(DECLARATION_FILES_ALL_COUNT) -ge 1 ]; then\
+		rsync --verbose --relative ./src/./**/*.d.ts ./build;\
+	else\
+		echo "No declaration files to build.";\
+  fi
 
 # 🧹 Cleaning
 

@@ -1,4 +1,4 @@
-import { template } from '@/index';
+import { template } from './index';
 
 describe('index.ts', () => {
 	describe('Can export template', () => {
