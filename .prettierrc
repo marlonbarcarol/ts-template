@@ -6,7 +6,8 @@
 	"quoteProps": "consistent",
 	"semi": true,
 	"singleQuote": true,
+	"useTabs": true,
 	"tabWidth": 2,
 	"trailingComma": "all",
-	"useTabs": true
+	"bracketSameLine": false
 }

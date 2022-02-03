@@ -1,5 +1,6 @@
 
 .PHONY: \
+	install \
 	ci \
 	compile \
 	version.bump version.bump.preview \
