@@ -6,6 +6,7 @@
 	changelog changelog.preview \
 	commitlint.main \
 	build build.ts build.exo \
+	run \
 	clean \
 	checkup \
 	code code.fix code.check \
@@ -16,6 +17,10 @@
 	npm.publish npm.publish.dry-run \
 
 default: ci
+
+install:
+	npx husky install
+	npm install
 
 # 🎉 Compile stuffs
 
@@ -64,7 +69,7 @@ build.ts:
 DECLARATION_FILES_SRC_COUNT:=$(strip $(shell find ./src -maxdepth 1 -name '*.d.ts' | wc -l))
 DECLARATION_FILES_ALL_COUNT:=$(strip $(shell find ./src -name '*.d.ts' | wc -l))
 
-# only executes rsync when there is a *.d.ts file, otherwise
+# only executes rsync when there is a *.d.ts file
 build.exo:
 	cp -v package.json ./build
 	cp -v ./*.md ./build
@@ -75,6 +80,9 @@ build.exo:
 	else\
 		echo "No declaration files to build.";\
   fi
+
+run:
+	npx ts-node src/index.ts
 
 # 🧹 Cleaning
 
