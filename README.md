@@ -5,6 +5,9 @@ This is a template for typescript projects.
 ## Package usage
 
 ```ts
+// THIS WHOLE BLOCK IS JUST A PLACEHOLDER
+// -- START:PLACEHOLDER
+
 import { template } from '@/index';
 
 const text =
@@ -15,6 +18,7 @@ if (template.text === text) {
 } else {
 	console.info('Not equal');
 }
+// -- END:PLACEHOLDER
 ```
 
 ## Development
